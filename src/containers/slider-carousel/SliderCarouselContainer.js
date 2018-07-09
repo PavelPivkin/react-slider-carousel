@@ -23,7 +23,10 @@ const items = [
     }
 ]
 
+const TIME_TO_NEXT_SLIDE = 6000;
+
 class SliderCarouselContainer extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -38,7 +41,7 @@ class SliderCarouselContainer extends React.Component {
     componentDidMount() {
         let width = window.innerWidth;
         if (width > 768) {
-            this.setState({ intervalId: setInterval(() => this.next(), 6000)});
+            this.setState({ intervalId: setInterval(() => this.next(), TIME_TO_NEXT_SLIDE)});
         }
 
     }
